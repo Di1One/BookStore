@@ -10,7 +10,7 @@ namespace BookStore.DataAccess
         {
             
         }
-
+        
         public DbSet<BookEntity> Books { get; set; }
     }
 }

@@ -16,7 +16,7 @@
         public string Description { get; } = string.Empty;
         public decimal Price { get; }
 
-        public static (Book boook, string Eror) Create(Guid id, string title, string description, decimal price)
+        public static (Book Book, string Eror) Create(Guid id, string title, string description, decimal price)
         {
             var eror = string.Empty;
 
