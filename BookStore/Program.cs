@@ -1,4 +1,7 @@
+using BookStore.Application.Services;
+using BookStore.Core.Abstractions;
 using BookStore.DataAccess;
+using BookStore.DataAccess.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookStore
@@ -17,6 +20,9 @@ namespace BookStore
             {
                 options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(BookStoreDbContext)));
             });
+
+            builder.Services.AddScoped<IBookService, BookService>();
+            builder.Services.AddScoped<IBookRepository, BookRepository>();
 
             var app = builder.Build();
 
